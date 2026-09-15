@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -19,7 +18,7 @@
         </activity>
 
         <service
-            android:name=".WhatsAppNotificationService"
+            android:name=".WhatsAppNotificationListener"
             android:label="AAIdrive WhatsApp"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
             android:exported="true">
@@ -29,7 +28,7 @@
         </service>
 
         <service
-            android:name=".CarAppService"
+            android:name=".WhatsAppCarService"
             android:exported="true">
             <intent-filter>
                 <action android:name="io.bimmergestalt.carconnection.service" />
