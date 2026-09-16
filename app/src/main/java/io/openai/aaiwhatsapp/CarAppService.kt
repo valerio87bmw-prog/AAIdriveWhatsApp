@@ -8,7 +8,7 @@ import android.util.Log
 class CarAppService : Service() {
 
     companion object {
-        private const val TAG = "AAIdriveWhatsApp"
+        private const val TAG = "AAIWhatsAppCarApp"
     }
 
     override fun onCreate() {
@@ -21,19 +21,20 @@ class CarAppService : Service() {
         flags: Int,
         startId: Int
     ): Int {
-        Log.i(TAG, "AAIdrive car connection requested")
+        Log.i(TAG, "CarAppService started")
 
         val messages = WhatsAppMessageStore.getMessages()
 
         Log.i(
             TAG,
-            "WhatsApp messages currently available: ${messages.size}"
+            "Messages available: ${messages.size}"
         )
 
         return START_STICKY
     }
 
     override fun onBind(intent: Intent?): IBinder? {
+        Log.i(TAG, "CarAppService bind requested")
         return null
     }
 
