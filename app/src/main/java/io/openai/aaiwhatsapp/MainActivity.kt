@@ -37,7 +37,9 @@ class MainActivity : Activity() {
 
             setOnClickListener {
                 try {
-                    startActivity(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS))
+                    startActivity(
+                        Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)
+                    )
                 } catch (e: Exception) {
                     Toast.makeText(
                         this@MainActivity,
@@ -70,3 +72,13 @@ class MainActivity : Activity() {
                     ).show()
                 }
             }
+        }
+
+        layout.addView(title)
+        layout.addView(description)
+        layout.addView(permissionButton)
+        layout.addView(statusButton)
+
+        setContentView(layout)
+    }
+}
